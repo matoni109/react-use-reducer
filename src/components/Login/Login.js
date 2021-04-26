@@ -1,17 +1,16 @@
-<<<<<<< HEAD
-import React, { useState, useEffect, useReducer, useContext } from "react";
-=======
-import React, { useState, useEffect, useReducer, useRef } from "react";
->>>>>>> a858c3876c03a64d346c16229707514a3ced46b8
+import React, {
+  useState,
+  useEffect,
+  useReducer,
+  useRef,
+  useContext,
+} from "react";
 
 import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
 import Button from "../UI/Button/Button";
-<<<<<<< HEAD
 import AuthContext from "../../store/auth-context";
-=======
 import Input from "../UI/Input/Input";
->>>>>>> a858c3876c03a64d346c16229707514a3ced46b8
 
 const emailReducer = (state, action) => {
   if (action.type === "USER_INPUT") {
@@ -50,12 +49,10 @@ const Login = (props) => {
     isValid: null,
   });
 
-<<<<<<< HEAD
   const authCtx = useContext(AuthContext);
-=======
+
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
->>>>>>> a858c3876c03a64d346c16229707514a3ced46b8
 
   useEffect(() => {
     console.log("EFFECT RUNNING");
@@ -110,17 +107,14 @@ const Login = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-<<<<<<< HEAD
-    authCtx.onLogin(emailState.value, passwordState);
-=======
+
     if (formIsValid) {
-      props.onLogin(emailState.value, passwordState);
+      authCtx.onLogin(emailState.value, passwordState);
     } else if (!emailIsValid) {
       emailInputRef.current.focus();
     } else {
       passwordInputRef.current.focus();
     }
->>>>>>> a858c3876c03a64d346c16229707514a3ced46b8
   };
 
   return (
